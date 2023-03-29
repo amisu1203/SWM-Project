@@ -17,6 +17,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="/static/css/quote.css" />
     <link rel="stylesheet" href="/static/css/todo.css" />
+    <link href="{{ url_for('static', filename='timer.css') }}" rel="stylesheet" type="text/css" />
 
     <!-- script -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -40,9 +41,26 @@
       <div id="image"></div>
     </div>
 
+    <div class="todaystudydiv">누적 공부 시간</div>
+    <div id="todaystudy" class="stopwatch">00:00:00</div>
+    <div class="stopwatchdiv">이건 스탑워치임</div>
+    <div id="stopwatch" class="stopwatch">00:00:00</div>
+
     <div>
-      <div id="image"></div>
+      <button type="button" onclick="startTimer()">start</button>
+      <button type="button" onclick="stopTimer(),save_timer()">stop</button>
+      <button type="button" onclick="resetTimer()">reset</button>
     </div>
+    <div>
+      <button id="attendance" type="button" onclick="attendance(),btnDisabled()">출첵</button>
+    </div>
+    <div>
+      대충 여기에 달력이나 출석날짜 나열됨
+      <div id="attendcheck">
+        <li></li>
+      </div>
+    </div>
+
     <div class="mypic">
       <h1>todos</h1>
     </div>
@@ -62,5 +80,6 @@
       <span></span>
       <span></span>
     </div>
+    <script src="{{ url_for('static', filename='js/timer.js') }}"></script>
   </body>
 </html>
