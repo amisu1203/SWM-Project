@@ -19,10 +19,12 @@ const join = () => {
     .then((data) => {
       if (data["message"] == "이미 존재하는 아이디입니다.") {
         $("#id").focus();
+        alert(data["message"]);
+      } else if (data["message"] == "가입 완료") {
+        alert(data["message"]);
+        window.location.href = "/";
       }
-      alert(data["message"]);
     });
-  return false;
 };
 
 const check_pw = () => {

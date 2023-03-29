@@ -2,7 +2,7 @@ import os
 import certifi
 from bson.objectid import ObjectId
 from pymongo import MongoClient
-from flask import Flask, render_template, request, jsonify, redirect, url_for
+from flask import Flask, render_template, request, jsonify
 import hashlib
 
 app = Flask(__name__)
@@ -43,10 +43,12 @@ def join():
             }
         db.pjs.insert_one(doc)
         
-        return jsonify({'message' : '가입완료'})
         # return redirect(url_for('home'))
+        return jsonify({'message' :'가입 완료'})
     else:
         return render_template('join.html')
+
+
 
 # todo apis
 @app.route("/todo", methods=["POST"])
