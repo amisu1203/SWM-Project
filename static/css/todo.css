@@ -31,7 +31,7 @@ body * {
   overflow: auto;
 }
 .con-todos .con-title-todo {
-  font-family: "Inconsolata", monospace;
+  /* font-family: "Inconsolata", monospace; */
   font-weight: 800;
   font-size: 1.7rem;
   position: sticky;
