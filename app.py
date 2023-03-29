@@ -13,7 +13,6 @@ client = MongoClient(
 db = client.dbsparta
 
 
-
 # api
 @app.route('/')
 def home():
@@ -48,13 +47,6 @@ def join():
     else:
         return render_template('join.html')
 
-
-if __name__ == '__main__':
-    app.run('0.0.0.0', port=5001, debug=True)
-
-
-
-
 # todo apis
 @app.route("/todo", methods=["POST"])
 def todo_post():
@@ -72,6 +64,7 @@ def todo_get():
     comments = [{**comment, **{"_id": str(comment["_id"])}}
                 for comment in comments]
     return jsonify({'result': comments})
+    
 
 
 @app.route("/todo", methods=["DELETE"])
