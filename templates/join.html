@@ -5,21 +5,37 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ㅅㅇㅁ 회원가입</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/signup.css') }}" />
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/reset.css') }}" />
+    <link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="{{ url_for('static', filename='js/signup.js') }}"></script>
   </head>
   <body>
-    <form id="form-join">
-      <label for="nickname"></label>
-      <input id="nickname" type="text" placeholder="닉네임을 입력하세요." required />
-      <label for="id"></label>
-      <input id="id" type="text" placeholder="아이디를 입력하세요." required />
-      <label for="pw1"></label>
-      <input id="pw1" type="password" placeholder="비밀번호를 입력하세요." required />
-      <label for="pw2"></label>
-      <input id="pw2" type="password" placeholder="비밀번호를 재확인하세요." required onchange="check_pw()" />
-      <p id="text-pw-check"></p>
-      <button type="submit">가입하기</button>
-    </form>
+    <main class="box-join">
+      <form id="form-join">
+        <h1 class="title-sign-up">Sign up</h1>
+        <label for="nickname" class="con-nickname">
+          <i class="xi-user icon-user"></i>
+          <input id="nickname" type="text" placeholder="Name" required size="15" />
+        </label>
+        <label for="id">
+          <i class="xi-mail icon-id"></i>
+          <input id="id" type="text" placeholder="ID" required size="15" />
+        </label>
+        <label for="pw1">
+          <i class="xi-lock-o icon-pw1"></i>
+          <input id="pw1" type="password" placeholder="Password" required size="15" />
+        </label>
+        <label for="pw2">
+          <i class="xi-lock icon-pw2"></i>
+          <input id="pw2" type="password" placeholder="Repeat Password" required onchange="check_pw()" size="15" />
+        </label>
+        <p id="text-pw-check"></p>
+        <button type="submit" class="btn-join">가입하기</button>
+      </form>
+    </main>
   </body>
 </html>
