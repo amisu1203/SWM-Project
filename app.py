@@ -2,14 +2,14 @@ import os
 import certifi
 from bson.objectid import ObjectId
 from pymongo import MongoClient
-from flask import Flask, render_template, request, jsonify
+from flask import Flask, render_template, request, jsonify, redirect, url_for
 import hashlib
 
 app = Flask(__name__)
 
 ca = certifi.where()
 client = MongoClient(
-    'mongodb+srv://sparta:sparta@cluster0.1dpm6q3.mongodb.net/?retryWrites=true&w=majority', tlsCAFile=ca)
+    'mongodb+srv://sparta:test@cluster0.g85ftsp.mongodb.net/?retryWrites=true&w=majority', tlsCAFile=ca)
 db = client.dbsparta
 
 
@@ -43,7 +43,8 @@ def join():
             }
         db.pjs.insert_one(doc)
         
-        return jsonify({'message': '가입이 완료되었습니다!'})
+        return jsonify({'message' : '가입완료'})
+        # return redirect(url_for('home'))
     else:
         return render_template('join.html')
 

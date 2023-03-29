@@ -14,8 +14,11 @@
       <input id="nickname" type="text" placeholder="닉네임을 입력하세요." required />
       <label for="id"></label>
       <input id="id" type="text" placeholder="아이디를 입력하세요." required />
-      <label for="pw"></label>
-      <input id="pw" type="password" placeholder="비밀번호를 입력하세요" required />
+      <label for="pw1"></label>
+      <input id="pw1" type="password" placeholder="비밀번호를 입력하세요." required />
+      <label for="pw2"></label>
+      <input id="pw2" type="password" placeholder="비밀번호를 재확인하세요." required onchange="check_pw()" />
+      <p id="text-pw-check"></p>
       <button type="submit">가입하기</button>
     </form>
   </body>
