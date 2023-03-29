@@ -1,0 +1,33 @@
+/* main theme 
+#252526
+#B7BFB4
+#F2F2F2; }
+#83A64E; }
+#465902;
+#f6f6ed; }
+*/
+
+* {
+  /* default font */
+  font-family: "Gowun Dodum", sans-serif;
+  /* eng font
+      font-family: "Inconsolata", monospace;
+    */
+}
+
+header {
+  margin-bottom: 180px;
+  position: relative;
+}
+
+.con-logo {
+  background-color: #f6f6ed;
+  background-image: url("/static/img/logo.png");
+  background-size: 130px;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100px;
+  width: 100%;
+  position: fixed;
+  top: 0;
+}
