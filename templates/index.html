@@ -32,61 +32,69 @@
     <script src="{{ url_for('static', filename='js/quote.js') }}"></script>
     <script src="{{ url_for('static', filename='js/todo.js') }}"></script>
   </head>
-
   <body>
     <header>
-      <div class="con-logo"></div>
+      <div class="con-logo">
+        <h1 class="visuallyhidden">스터디위드미 스윗미</h1>
+      </div>
+      <!-- 로그인한 유저 정보 보여줄 섹션
+        <div class="con-head-info">
+          <h2>환영합니다.</h2>
+        </div>
+      -->
     </header>
-    <div class="mybtns">
-      <h1>스터디윗미</h1>
-      <div id="quote" class="myquotes"></div>
-      <button onclick="callQuotesApi()">두근 두근</button>
-    </div>
-    <!--
-    <div>
-      <div id="image"></div>
-    </div>
-  -->
-    <div class="todaystudydiv">누적 공부 시간</div>
-    <div id="todaystudy" class="stopwatch">00:00:00</div>
-    <div class="stopwatchdiv">이건 스탑워치임</div>
-    <div id="stopwatch" class="stopwatch">00:00:00</div>
+    <main>
+      <div class="con-quote clearfix">
+        <p class="txt-title-quote">오늘의 격언</p>
+        <div id="quote" class="txt-quote"></div>
+        <button onclick="callQuotesApi()" class="btn-pass-quote xi-angle-right"></button>
+      </div>
+      <!-- 랜덤 사진 보여줄 섹션
+        <div>
+          <div id="image"></div>
+        </div>
+      -->
+      <div class="todaystudydiv">누적 공부 시간</div>
+      <div id="todaystudy" class="stopwatch">00:00:00</div>
+      <div class="stopwatchdiv">이건 스탑워치임</div>
+      <div id="stopwatch" class="stopwatch">00:00:00</div>
 
-    <div>
-      <button type="button" onclick="startTimer()">start</button>
-      <button type="button" onclick="stopTimer(),save_timer()">stop</button>
-      <button type="button" onclick="resetTimer()">reset</button>
-    </div>
-    <div>
-      <button id="attendance" type="button" onclick="attendance(),btnDisabled()">출첵</button>
-    </div>
-    <div>
-      대충 여기에 달력이나 출석날짜 나열됨
-      <div id="attendcheck">
-        <li></li>
+      <div>
+        <button type="button" onclick="startTimer()">start</button>
+        <button type="button" onclick="stopTimer(),save_timer()">stop</button>
+        <button type="button" onclick="resetTimer()">reset</button>
       </div>
-    </div>
+      <div>
+        <button id="attendance" type="button" onclick="attendance(),btnDisabled()">출첵</button>
+      </div>
+      <div>
+        대충 여기에 달력이나 출석날짜 나열됨
+        <div id="attendcheck">
+          <li></li>
+        </div>
+      </div>
 
-    <div class="con-todos">
-      <div class="con-title-todo">
-        <h3>MY LIST</h3>
+      <div class="con-todos">
+        <div class="con-title-todo">
+          <h3>TO-DO LIST</h3>
+        </div>
+        <div class="con-inp-todo">
+          <label for="todo" class="mytodo clearfix">
+            <input id="todo" type="text" placeholder="할 일을 입력해주세요" size="30" required />
+            <button class="btn-3d btn-save-todo" onclick="save_todo()">저장하기</button>
+          </label>
+        </div>
+        <div class="con-li-todo" id="todo-list">
+          <li>
+            <h3>TODO</h3>
+          </li>
+        </div>
       </div>
-      <div class="con-inp-todo">
-        <label for="todo" class="mytodo clearfix">
-          <input id="todo" type="text" placeholder="할 일을 입력해주세요" size="30" required />
-          <button class="btn-3d btn-save-todo" onclick="save_todo()">저장하기</button>
-        </label>
+      <div class="weather" id="weather">
+        <span></span>
+        <span></span>
       </div>
-      <div class="con-li-todo" id="todo-list">
-        <li>
-          <h3>TODO</h3>
-        </li>
-      </div>
-    </div>
-    <div class="weather" id="weather">
-      <span></span>
-      <span></span>
-    </div>
+    </main>
     <script src="{{ url_for('static', filename='js/timer.js') }}"></script>
   </body>
 </html>

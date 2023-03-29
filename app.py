@@ -21,7 +21,6 @@ db = client.dbsparta
 def home():
     return render_template("index.html")
 
-
 # sign-up apis
 @app.route("/join", methods=["GET", "POST"])
 def join():

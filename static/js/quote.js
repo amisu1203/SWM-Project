@@ -21,7 +21,6 @@ function callImageApi() {
   fetch("https://random.imagecdn.app/v1/image?width=500&height=500&format=json")
     .then((res) => res.json())
     .then((data) => {
-      console.log(data);
       let image = data["url"];
       let temp_html = `
           <p><img src="${image}" alt=""></p>

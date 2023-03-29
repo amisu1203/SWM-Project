@@ -5,8 +5,11 @@
 #83A64E; }
 #465902; }
 */
-* {
+
+/* theme font */
+body * {
   font-family: "Gowun Dodum", sans-serif;
+  /* eng font font-family: "Inconsolata", monospace; */
 }
 
 body {
@@ -35,7 +38,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 0 10px;
+  padding: 20px;
 }
 #form-join input::placeholder {
   color: #d7d7d7;
@@ -44,9 +47,9 @@ body {
 .title-sign-up {
   background-color: inherit;
   color: #252526;
-  margin-bottom: 15px;
+  margin-bottom: 30px;
   font-weight: 800;
-  font-size: 1.6rem;
+  font-size: 2.5rem;
 }
 
 /* 아이콘 */
@@ -56,6 +59,7 @@ body {
 .icon-pw2 {
   position: relative;
   top: 5px;
+  font-size: 1.1rem;
 }
 
 #nickname {
@@ -64,6 +68,8 @@ body {
   border: 0;
   border-bottom: 1px solid #b7bfb4;
   margin-bottom: 10px;
+  padding-bottom: 10px;
+  font-size: 1.2rem;
 }
 #id {
   outline: none;
@@ -71,6 +77,8 @@ body {
   border: 0;
   border-bottom: 1px solid #b7bfb4;
   margin-bottom: 10px;
+  padding-bottom: 10px;
+  font-size: 1.2rem;
 }
 #pw1 {
   outline: none;
@@ -78,6 +86,8 @@ body {
   border: 0;
   border-bottom: 1px solid #b7bfb4;
   margin-bottom: 10px;
+  padding-bottom: 10px;
+  font-size: 1.2rem;
 }
 #pw2 {
   outline: none;
@@ -85,6 +95,8 @@ body {
   border: 0;
   border-bottom: 1px solid #b7bfb4;
   margin-bottom: 20px;
+  padding-bottom: 10px;
+  font-size: 1.2rem;
 }
 
 #text-pw-check {

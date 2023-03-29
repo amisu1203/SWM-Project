@@ -6,26 +6,10 @@
 #465902; }
 */
 
-/* icon default */
-[class*=" xi-"],
-[class^="xi-"] {
-  font-size: 17px;
-  margin-right: 3px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-[class*=" xi-"]:hover,
-[class^="xi-"]:hover {
-  scale: 1.2;
-}
-
-* {
-  /* default font */
+/* theme font */
+body * {
   font-family: "Gowun Dodum", sans-serif;
-  /* eng font
-    font-family: "Inconsolata", monospace;
-  */
+  /* eng font font-family: "Inconsolata", monospace; */
 }
 
 /* todo 컨테이너 */
@@ -115,13 +99,12 @@
 }
 
 .con-li-todo .form-check-input {
-  margin: 0 7px 0 0;
+  margin: 5px 10px 0 0;
   font-size: 1.4rem;
-  margin-top: 5px;
 }
 
 .con-li-todo .txt-todo {
-  font-size: 1.4rem;
+  font-size: 1.2rem;
   line-height: 2rem;
   display: inline-block;
   color: rgb(80, 80, 80);

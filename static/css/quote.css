@@ -1,20 +1,48 @@
 @import url("https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap");
 
-* {
+/* theme color
+#252526
+#B7BFB4
+#F2F2F2; 
+#83A64E; 
+#465902;
+#f6f6ed; 
+*/
+
+/* theme font */
+body * {
   font-family: "Gowun Dodum", sans-serif;
+  /* eng font font-family: "Inconsolata", monospace; */
 }
 
-.mybtns {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-
-  margin-top: 20px;
+.con-quote {
+  width: 560px;
+  /* background-color: red; */
+  padding: 20px;
+  margin: 0 auto;
+  border-radius: 10px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
 }
 
-.myquotes {
-  font-size: 20px;
+.con-quote .txt-title-quote {
+  font-size: 1rem;
+  margin-bottom: 8px;
+}
+
+.con-quote .txt-quote {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.con-quote .btn-pass-quote {
+  float: right;
+  border: none;
+  font-size: 1.2rem;
+  background-color: transparent;
+}
+
+.con-quote .btn-pass-quote:hover {
+  scale: 1.2;
 }
 
 #image {

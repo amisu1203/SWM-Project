@@ -1,22 +1,34 @@
-/* main theme 
+/* theme color
 #252526
 #B7BFB4
-#F2F2F2; }
-#83A64E; }
-#465902;
-#f6f6ed; }
+#F2F2F2
+#83A64E
+#465902
+#f6f6ed
 */
 
-* {
-  /* default font */
+/* theme font */
+body * {
   font-family: "Gowun Dodum", sans-serif;
-  /* eng font
-      font-family: "Inconsolata", monospace;
-    */
+  /* eng font font-family: "Inconsolata", monospace; */
 }
 
+/* icon default */
+[class*=" xi-"],
+[class^="xi-"] {
+  font-size: 17px;
+  margin-right: 3px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+[class*=" xi-"]:hover,
+[class^="xi-"]:hover {
+  scale: 1.2;
+}
+
+/* header */
 header {
-  margin-bottom: 180px;
+  margin-bottom: 120px;
   position: relative;
 }
 
@@ -30,4 +42,10 @@ header {
   width: 100%;
   position: fixed;
   top: 0;
+}
+
+.con-head-info {
+  position: fixed;
+  top: 20px;
+  right: 20px;
 }
