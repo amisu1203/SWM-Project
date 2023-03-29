@@ -86,32 +86,41 @@ def attend_post():
 # todo apis
 @app.route("/todo", methods=["POST"])
 def todo_post():
-    todo_receive = request.form["todo_give"]
-    doc = {"todo": todo_receive}
+    todo_receive = request.form['todo_give']
+    todo_finish = request.form['is_finish']
+
+    doc = {
+        'todo': todo_receive,
+        'is_finish': todo_finish
+    }
     db.todolist.insert_one(doc)
-    return jsonify({"msg": "저장 완료!"})
+    return jsonify({'msg': '저장 완료!'})
+
 
 
 @app.route("/todo", methods=["GET"])
 def todo_get():
     comments = list(db.todolist.find())
-    comments = [{**comment, **{"_id": str(comment["_id"])}} for comment in comments]
-    return jsonify({"result": comments})
+    comments = [{**comment, **{"_id": str(comment["_id"])}}
+                for comment in comments]
+    return jsonify({'result': comments})
 
 
 @app.route("/todo", methods=["DELETE"])
 def todo_delete():
     delete_receive = request.form["id"]
-    db.todolist.delete_one({"_id": ObjectId(delete_receive)})
-    return jsonify({"msg": "삭제 완료!"})
-
+    db.todolist.delete_one({'_id': ObjectId(delete_receive)})
+    return jsonify({'msg': "삭제 완료!"})
 
 @app.route("/todo", methods=["PUT"])
 def todo_update():
     id_receive = request.form["id"]
     new_todo = request.form["new_todo"]
-    db.todolist.update_one({"_id": ObjectId(id_receive)}, {"$set": {"todo": new_todo}})
-    return jsonify({"msg": "수정 완료!"})
+    isfinish = request.form["is_finish"] #todo 완료 상태 확인 
+     
+
+    db.todolist.update_one({'_id': ObjectId(id_receive)}, {"$set": {"todo": new_todo, "is_finish":isfinish}})
+    return jsonify({'msg': "수정 완료!"})
 
 
 if __name__ == "__main__":
