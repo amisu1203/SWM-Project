@@ -25,12 +25,12 @@ body * {
 }
 
 .con-quote .txt-title-quote {
-  font-size: 1rem;
+  font-size: 1.2rem;
   margin-bottom: 8px;
 }
 
 .con-quote .txt-quote {
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   font-weight: bold;
 }
 

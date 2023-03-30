@@ -38,11 +38,16 @@
       <div class="con-logo">
         <h1 class="visuallyhidden">스터디위드미 스윗미</h1>
       </div>
-      <!-- 로그인한 유저 정보 보여줄 섹션
-        <div class="con-head-info">
-          <h2>환영합니다.</h2>
+      <!-- 로그인한 유저 정보 보여줄 섹션 -->
+      <div class="con-head-info">
+        <h2 class="txt-total-time">환영합니다.</h2>
+        <div class="time-css">
+          <div class="txt-total-time">누적 공부 시간 :&nbsp</div>
+          <div id="todaystudy" class="txt-total-time">00:00:00</div>
         </div>
-      -->
+        <div class="txt-total-time" id="swmday"></div>
+        <div id="avgstudy"></div>
+      </div>
     </header>
     <main>
       <!-- quote -->
@@ -54,21 +59,22 @@
 
       <!-- timer -->
       <div class="con-timer">
-        <div class="txt-total-time">누적 공부 시간</div>
-        <div id="todaystudy" class="stopwatch">00:00:00</div>
-        <div class="stopwatchdiv">이건 스탑워치임</div>
-        <div id="stopwatch" class="stopwatch">00:00:00</div>
+        <div class="stop-css">
+          <div class="stopwatchdiv"></div>
+          <div id="stopwatch" class="stopwatch">00:00:00</div>
 
-        <div>
-          <button type="button" onclick="startTimer()">start</button>
-          <button type="button" onclick="stopTimer(),save_timer()">stop</button>
-          <button type="button" onclick="resetTimer()">reset</button>
+          <div class="button-css">
+            <button type="button" onclick="startTimer()">start</button>
+            <button type="button" onclick="stopTimer(),save_timer()">stop</button>
+            <button type="button" onclick="resetTimer()">reset</button>
+          </div>
         </div>
         <div>
-          <button id="attendance" type="button" onclick="attendance(),btnDisabled()">출첵</button>
+          <button class="check-css" id="attendance" type="button" onclick="attendance(),btnDisabled()">출첵</button>
         </div>
-        <div>
-          대충 여기에 달력이나 출석날짜 나열됨
+        <input id="check-btn" type="checkbox" />
+        <label class="check-btn1" for="check-btn">▼</label>
+        <div class="attend-css">
           <div id="attendcheck">
             <li></li>
           </div>

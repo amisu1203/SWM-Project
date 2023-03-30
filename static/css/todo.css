@@ -104,7 +104,7 @@ body * {
 }
 
 .con-li-todo .txt-todo {
-  font-size: 1.2rem;
+  font-size: 1.6rem;
   line-height: 2rem;
   display: inline-block;
   color: rgb(80, 80, 80);
@@ -127,96 +127,3 @@ body * {
   font-size: 2rem;
   font-family: "Inconsolata", monospace;
 }
-
-/* .mypic {
-  width: 95%;
-  max-width: 700px;
-  padding: 20px;
-  border-color: 0px 0px 100px 0px #465902;
-  margin: 20px auto;
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-.mypic > h1 {
-  font-size: 30px;
-}
-.form-control {
-  width: 300px;
-}
-.mybox {
-  width: 100%;
-  max-width: 700px;
-  padding: 20px;
-  border-color: 0px 0px 100px 0px #465902;
-  margin: 20px auto;
-}
-
-.mytodo {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-.mybucket {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.mybucket > input {
-  width: 70%;
-}
-
-.mybox > li {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-
-  margin-bottom: 10px;
-  min-height: 48px;
-}
-
-.mybox > li > h2 {
-  max-width: 75%;
-  font-size: 20px;
-  font-weight: 500;
-  margin-right: auto;
-  margin-bottom: 0px;
-}
-
-.mybox > li > h2.done {
-  text-decoration: line-through;
-}
-
-.completed {
-  color: #83a64e;
-  text-decoration: line-through;
-  text-decoration-thickness: 10px;
-}
-
-.weather {
-  flex-direction: column;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.my {
-  background-color: white;
-  border: 5px solid #252526;
-  margin-left: 500px;
-  margin-right: 500px;
-  margin-top: 50px;
-  border-radius: 100px;
-  margin-bottom: 10px;
-}
-
-.gray {
-  margin: 20px auto 20px auto;
-} */

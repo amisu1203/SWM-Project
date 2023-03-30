@@ -5,47 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ㅅㅇㅁ login</title>
-    <style>
-      .root {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        min-height: 100vh;
-        flex-direction: column;
-      }
-
-      .id {
-        margin: 1em;
-      }
-
-      .password {
-        margin: 1em;
-      }
-
-      .btn {
-        /* 생략 */
-        margin: 0;
-        padding: 0.5rem 1rem;
-        font-size: 1rem;
-        font-weight: 400;
-        text-align: center;
-        text-decoration: none;
-
-        display: inline-block;
-        width: auto;
-
-        border: solid 1px;
-        border-radius: 4px;
-        /* 생략 */
-        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-
-        cursor: pointer;
-
-        transition: 0.5s;
-
-        background-color: #91ff99;
-      }
-    </style>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/login.css') }}" />
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/reset.css') }}" />
+    <link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css" />
 
     <!-- Bootstrap Import -->
     <link
@@ -62,80 +26,25 @@
 
     <!-- JQuery Update -->
     <script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
-    <script>
-      // function login() {
-      //   let username = $("#username").val();
-      //   let password = $("#password").val();
-
-      //   console.log(username, password);
-
-      //   let formData = new FormData();
-      //   formData.append("username_give", username);
-      //   formData.append("password_give", password);
-
-      //   fetch("/login", { method: "POST", body: formData })
-      //     .then((res) => res.json())
-      //     .then((data) => {
-      //       // window.location.reload();
-      //     });
-      // }
-      function login() {
-        $.ajax({
-          type: "POST",
-          url: "/login",
-          data: {
-            username_give: $("#username").val(),
-            password_give: $("#password").val(),
-          },
-
-          success: function (response) {
-            if (response["result"] == "success") {
-              // 로그인이 정상적으로 되면, 토큰을 받아옵니다.
-              alert("로그인 완료!");
-              window.location.href = "/";
-            } else {
-              // 로그인이 안되면 에러메시지를 띄웁니다.
-              alert(response["msg"]);
-            }
-          },
-        });
-      }
-
-      function user_listing() {
-        fetch("/user_list", { method: "GET" })
-          .then((res) => res.json())
-          .then((data) => {
-            let users = data["result"];
-            console.log(users);
-            users.forEach((a) => {
-              let username = a["username"];
-              let password = a["password"];
-
-              temp_html = `
-              <p> ${username} </p> </br>
-              `;
-              $("#userbox").append(temp_html);
-            });
-          });
-      }
-    </script>
+    <script src="../static/js/login.js"></script>
   </head>
   <body>
     <div class="root">
-      <div class="formfield">
+      <h1 class="title-login">Sign In</h1>
+      <div class="formfield formfield-id">
         <div class="id">
-          ID
-          <input type="text" id="username" placeholder="Username" />
+          <i class="xi-mail icon-id icon-id"></i>
+          <input class="inp-login-id" type="text" id="username" placeholder="Username" required />
         </div>
       </div>
-      <div class="formfield">
+      <div class="formfield formfield-pw">
         <div class="password">
-          PW
-          <input type="password" id="password" placeholder="Password" />
+          <i class="xi-lock-o icon-pw"></i>
+          <input class="inp-login-pw" type="password" id="password" placeholder="Password" required />
         </div>
       </div>
-      <button class="btn" onclick="login()">Login</button>
-      <button class="btn" onclick="user_listing()">userlisting</button>
+      <button class="btn btn-login" onclick="login()">Login</button>
+      <button class="btn visuallyhidden" onclick="user_listing()">userlisting</button>
       <div id="userbox"></div>
     </div>
   </body>

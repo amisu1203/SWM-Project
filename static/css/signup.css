@@ -1,4 +1,4 @@
-/* main theme 
+/* main theme
 #252526
 #B7BFB4
 #F2F2F2; }
@@ -94,21 +94,29 @@ body {
   background-color: inherit;
   border: 0;
   border-bottom: 1px solid #b7bfb4;
-  margin-bottom: 20px;
   padding-bottom: 10px;
   font-size: 1.2rem;
 }
 
 #text-pw-check {
+  font-family: "Gowun Dodum", sans-serif;
+  margin: 5px 0 10px;
+  left: 13px;
+  position: relative;
+}
+
+#text-pw-check .txt-pw-incorrect {
+  color: #f8673b;
 }
 
 #form-join .btn-join {
-  font-family: "Gowun Dodum", sans-serif;
+  font-family: "Inconsolata", monospace;
+  font-weight: 800;
   background-color: #83a64e;
   border-radius: 5px;
   border: 0;
   padding: 8px 20px;
-  font-size: 12px;
+  font-size: 1rem;
   transition: all 0.3s ease-in-out;
 }
 #form-join .btn-join:hover {
