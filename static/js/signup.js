@@ -22,7 +22,7 @@ const join = () => {
         alert(data["message"]);
       } else if (data["message"] == "가입 완료") {
         alert(data["message"]);
-        window.location.href = "/";
+        window.location.href = "/login";
       }
     });
 };

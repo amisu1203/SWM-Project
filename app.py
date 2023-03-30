@@ -53,6 +53,31 @@ def join():
         return render_template("join.html")
 
 
+# login apis
+@app.route("/login", methods=["GET"])
+def show_login_page():
+    return render_template("login.html")
+
+@app.route("/login", methods=["POST"])
+def login():
+    username_receive = request.form["username_give"]
+    password_receive = request.form["password_give"]
+    user = db.pjs.find_one({"id": username_receive})
+    if user is not None:
+        salt = user['salt']
+        hashed_password = hashlib.sha256(password_receive.encode() + salt).hexdigest()
+        if user['password'] == hashed_password:
+            return jsonify({"result": "success"})
+    return jsonify({"result": "fail", "msg": "아이디와 비밀번호가 일치하지 않습니다."})
+
+
+@app.route("/user_list", methods=["GET"])
+def userlisting():
+    users = list(db.pjs.find({}, {"_id": False}))
+    return jsonify({"result": users})
+
+
+
 # timer apis
 @app.route("/timer", methods=["GET"])
 def timer_get():

@@ -31,18 +31,57 @@ function show_timer() {
     });
 }
 
-//출첵 반영
+//출첵, 누적일차, 하루 평균 이상
 function show_attend() {
   fetch("/attend")
     .then((res) => res.json())
     .then((data) => {
       let rows = data["result"];
       $("#attendcheck").empty();
+      let swmday = [];
       rows.forEach((a) => {
         let attend = a["attend"];
         temp_html = `<li>${attend}</li>`;
+        swmday.push(attend);
         $("#attendcheck").append(temp_html);
       });
+      $("#swmday").append(`ㅅㅇㅁ ${swmday.length}일차`);
+      let avgtime = parseInt(timeSum / swmday.length);
+      function timerStringSecond(a) {
+        let hour = parseInt(a / (60 * 60));
+        let min = parseInt((a - hour * 60 * 60) / 60);
+        let sec = a % 60;
+
+        return String(hour).padStart(2, "0") + "시간" + String(min).padStart(2, "0") + "분" + String(sec).padStart(2, "0") + "초";
+      }
+      $("#avgstudy").append(`하루 평균 공부시간 : ${timerStringSecond(avgtime)}`);
+    });
+}
+
+//출첵, 누적일차, 하루 평균 이상
+function show_attend() {
+  fetch("/attend")
+    .then((res) => res.json())
+    .then((data) => {
+      let rows = data["result"];
+      $("#attendcheck").empty();
+      let swmday = [];
+      rows.forEach((a) => {
+        let attend = a["attend"];
+        temp_html = `<li>${attend}</li>`;
+        swmday.push(attend);
+        $("#attendcheck").append(temp_html);
+      });
+      $("#swmday").append(`ㅅㅇㅁ ${swmday.length}일차`);
+      let avgtime = parseInt(timeSum / swmday.length);
+      function timerStringSecond(a) {
+        let hour = parseInt(a / (60 * 60));
+        let min = parseInt((a - hour * 60 * 60) / 60);
+        let sec = a % 60;
+
+        return String(hour).padStart(2, "0") + "시간" + String(min).padStart(2, "0") + "분" + String(sec).padStart(2, "0") + "초";
+      }
+      $("#avgstudy").append(`하루 평균 공부시간 : ${timerStringSecond(avgtime)}`);
     });
 }
 
@@ -53,7 +92,7 @@ function dailyAttend() {
     .then((data) => {
       let rows = data["result"];
       let date = new Date();
-      let attendDate = date.getFullYear() + "." + date.getMonth() + "." + date.getDate();
+      let attendDate = date.getFullYear() + "." + (Number(date.getMonth()) + 1) + "." + date.getDate();
       rows.forEach((a) => {
         let attend = a["attend"];
         if (attend === attendDate) {
@@ -69,7 +108,6 @@ function dailyAttend() {
 function save_timer() {
   let dayTimer = time;
   let formData = new FormData();
-  console.log(time, typeof time);
 
   formData.append("timer_give", dayTimer);
 
@@ -84,7 +122,7 @@ function save_timer() {
 //출첵
 function attendance() {
   let date = new Date();
-  let attendance = date.getFullYear() + "." + date.getMonth() + "." + date.getDate();
+  let attendance = date.getFullYear() + "." + (Number(date.getMonth()) + 1) + "." + date.getDate();
   let formData = new FormData();
 
   formData.append("attend_give", attendance);
