@@ -20,6 +20,7 @@
     <link rel="stylesheet" href="/static/css/quote.css" />
     <link rel="stylesheet" href="/static/css/todo.css" />
     <link rel="stylesheet" href="/static/css/main.css" />
+    <link rel="stylesheet" href="/static/css/timer.css" />
     <link href="{{ url_for('static', filename='timer.css') }}" rel="stylesheet" type="text/css" />
 
     <!-- script -->
@@ -44,36 +45,37 @@
       -->
     </header>
     <main>
+      <!-- quote -->
       <div class="con-quote clearfix">
         <p class="txt-title-quote">오늘의 격언</p>
         <div id="quote" class="txt-quote"></div>
         <button onclick="callQuotesApi()" class="btn-pass-quote xi-angle-right"></button>
       </div>
-      <!-- 랜덤 사진 보여줄 섹션
+
+      <!-- timer -->
+      <div class="con-timer">
+        <div class="txt-total-time">누적 공부 시간</div>
+        <div id="todaystudy" class="stopwatch">00:00:00</div>
+        <div class="stopwatchdiv">이건 스탑워치임</div>
+        <div id="stopwatch" class="stopwatch">00:00:00</div>
+
         <div>
-          <div id="image"></div>
+          <button type="button" onclick="startTimer()">start</button>
+          <button type="button" onclick="stopTimer(),save_timer()">stop</button>
+          <button type="button" onclick="resetTimer()">reset</button>
         </div>
-      -->
-      <div class="todaystudydiv">누적 공부 시간</div>
-      <div id="todaystudy" class="stopwatch">00:00:00</div>
-      <div class="stopwatchdiv">이건 스탑워치임</div>
-      <div id="stopwatch" class="stopwatch">00:00:00</div>
-
-      <div>
-        <button type="button" onclick="startTimer()">start</button>
-        <button type="button" onclick="stopTimer(),save_timer()">stop</button>
-        <button type="button" onclick="resetTimer()">reset</button>
-      </div>
-      <div>
-        <button id="attendance" type="button" onclick="attendance(),btnDisabled()">출첵</button>
-      </div>
-      <div>
-        대충 여기에 달력이나 출석날짜 나열됨
-        <div id="attendcheck">
-          <li></li>
+        <div>
+          <button id="attendance" type="button" onclick="attendance(),btnDisabled()">출첵</button>
+        </div>
+        <div>
+          대충 여기에 달력이나 출석날짜 나열됨
+          <div id="attendcheck">
+            <li></li>
+          </div>
         </div>
       </div>
 
+      <!-- to do list -->
       <div class="con-todos">
         <div class="con-title-todo">
           <h3>나의 할 일</h3>

@@ -1,0 +1,18 @@
+/* theme color
+#252526
+#B7BFB4
+#F2F2F2
+#83A64E
+#465902
+#f6f6ed
+*/
+
+/* theme font */
+body * {
+  font-family: "Gowun Dodum", sans-serif;
+  /* eng font font-family: "Inconsolata", monospace; */
+}
+
+.con-timer {
+  border: 1px solid red;
+}
