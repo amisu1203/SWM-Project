@@ -1,0 +1,79 @@
+/* main theme
+#252526
+#B7BFB4
+#F2F2F2; }
+#83A64E; }
+#465902; }
+*/
+
+/* theme font */
+body * {
+  font-family: "Gowun Dodum", sans-serif;
+  /* eng font font-family: "Inconsolata", monospace; */
+}
+
+/* icon */
+.icon-id,
+.icon-pw {
+  position: relative;
+  top: 5px;
+  font-size: 1.3rem;
+}
+
+body {
+  background-color: #f2f2f2;
+}
+
+.root {
+  background-color: rgb(255, 255, 255);
+  width: 50vw;
+  height: 60vh;
+  margin: 10% auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+}
+
+.root .title-login {
+  font-family: "Gowun Dodum", sans-serif;
+  background-color: inherit;
+  color: #252526;
+  margin-bottom: 30px;
+  font-weight: 900;
+  font-size: 2.5rem;
+}
+
+.root .formfield-id {
+  margin-bottom: 10px;
+}
+.root .formfield-pw {
+  margin-bottom: 18px;
+}
+
+.formfield .inp-login-id,
+.formfield .inp-login-pw {
+  outline: none;
+  background-color: inherit;
+  border: 0;
+  border-bottom: 1px solid #b7bfb4;
+  margin-bottom: 10px;
+  font-size: 1.2rem;
+}
+
+.root .btn-login {
+  font-family: "Gowun Dodum", sans-serif;
+  font-weight: 900;
+  background-color: #83a64e;
+  border-radius: 5px;
+  border: 0;
+  padding: 8px 20px;
+  font-size: 1rem;
+  transition: all 0.3s ease-in-out;
+}
+
+.root .btn-login:hover {
+  background-color: #abc99f;
+}
