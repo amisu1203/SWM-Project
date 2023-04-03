@@ -30,21 +30,10 @@ const join = () => {
 const check_pw = () => {
   const user_pw1 = $("#pw1").val();
   const user_pw2 = $("#pw2").val();
-  if ($("#btn-join").attr("disabled") !== undefined) {
-    if (user_pw1 == user_pw2) {
-      $("#text-pw-check").html("<div class='txt-pw-correct'>비밀번호가 일치합니다.</div>");
-      $("#btn-join").removeAttr("disabled");
-    } else {
-      $("#text-pw-check").html("<div class='txt-pw-incorrect'>비밀번호가 일치하지 않습니다.</div>");
-      $("#btn-join").attr("disabled", "disabled");
-    }
+  if (user_pw1 == user_pw2) {
+    $("#text-pw-check").html("<div class='txt-pw-correct'>비밀번호가 일치합니다.</div>");
+    $(".btn-join").attr("disabled", false);
   } else {
-    if (user_pw1 == user_pw2) {
-      $("#text-pw-check").html("<div class='txt-pw-correct'>비밀번호가 일치합니다.</div>");
-      $("#btn-join").removeAttr("disabled");
-    } else {
-      $("#text-pw-check").html("<div class='txt-pw-incorrect'>비밀번호가 일치하지 않습니다.</div>");
-      $("#btn-join").attr("disabled", "disabled");
-    }
+    $("#text-pw-check").html("<div class='txt-pw-incorrect'>비밀번호가 일치하지 않습니다.</div>");
   }
 };
